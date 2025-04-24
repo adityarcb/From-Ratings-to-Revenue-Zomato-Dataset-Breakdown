@@ -24,3 +24,14 @@ df_cleaned.dropna(subset=[
 
 # Remove outliers in Votes (top 1%)
 df_cleaned = df_cleaned[df_cleaned['Votes'] < df_cleaned['Votes'].quantile(0.99)]
+
+
+# === Objective 1: Analyze Restaurant Ratings and Popularity ===
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df_cleaned, x='Aggregate rating', y='Votes')
+plt.title('Relationship between Aggregate Rating and Votes')
+plt.xlabel('Aggregate Rating')
+plt.ylabel('Votes')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
